@@ -12,7 +12,6 @@ namespace FlipKart.Resources
     public class Tests:Base.BaseClass
     {
         
-
         [Test]
         //Reading the data from the Excel file
         public void ReadingDataFromExcelFile()
@@ -36,5 +35,6 @@ namespace FlipKart.Resources
                 Console.WriteLine("Not Successfull");
             }
         }
+        
     }
 }

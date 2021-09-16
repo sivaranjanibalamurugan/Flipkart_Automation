@@ -21,8 +21,8 @@ namespace FlipKart.Base
     public class BaseClass
     {
         public static IWebDriver driver;
-
-        //Get Logger for  'Tests'
+     
+        //Get Logger for 'Tests'
         private static readonly ILog log = LogManager.GetLogger(typeof(Tests));
         //Get the default ILoggingRepository
         private static readonly ILoggerRepository repository = log4net.LogManager.GetRepository(Assembly.GetCallingAssembly());
@@ -47,6 +47,7 @@ namespace FlipKart.Base
                 driver.Manage().Window.Maximize();
                 System.Threading.Thread.Sleep(2000);
                 driver.Url = "https://www.flipkart.com/";
+                Takescreenshot();
                 log.Debug("navigating to url");
 
                 log.Info("Exiting setup");
@@ -63,6 +64,12 @@ namespace FlipKart.Base
         public void TearDown()
         {
             driver.Quit();
+        }
+        public static void Takescreenshot()
+        {
+            ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
+            Screenshot screenshot = screenshotDriver.GetScreenshot();
+            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png");
         }
     }
 }
