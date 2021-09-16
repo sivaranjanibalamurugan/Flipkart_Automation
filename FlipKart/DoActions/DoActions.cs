@@ -1,4 +1,8 @@
-﻿using NUnit.Framework;
+﻿/* Project = Automating Flipkart using DDT and POM
+ * Created by = SIVA RANJANI B
+ * created on = 16/09/21
+ */
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -22,11 +26,11 @@ namespace FlipKart.DoActions
             Debug.WriteLine("**");
             //Storing the data in the excel and run in it various dataset
             driver.FindElement(By.XPath("//input[@class='_2IX_2- VJZDxU']")).SendKeys(ExcelDataReader.ReadData(1, "email"));
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(4000);
             driver.FindElement(By.XPath("//input[@class='_2IX_2- _3mctLh VJZDxU']")).SendKeys(ExcelDataReader.ReadData(1, "password"));
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(4000);
             driver.FindElement(By.XPath("//button[@class='_2KpZ6l _2HKlqd _3AWRsL']//form//button[@type='submit']")).Click();
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(4000);
         }
     }
 }
