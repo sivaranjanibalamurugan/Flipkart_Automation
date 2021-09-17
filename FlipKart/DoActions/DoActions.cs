@@ -2,6 +2,7 @@
  * Created by = SIVA RANJANI B
  * created on = 16/09/21
  */
+using FlipKart.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace FlipKart.DoActions
 {
-    class DoActions
+    public class DoActions
     {
         public static void AssertAfterLaunching(IWebDriver driver)
         {
@@ -23,24 +24,29 @@ namespace FlipKart.DoActions
         }
         public static void LoginToFlipkart(IWebDriver driver)
         {
-           //ExcelDataReader.PopulateInCollection(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Resources\Flipkart_DDT.xlsx");
-            Debug.WriteLine("**");
-            System.Threading.Thread.Sleep(4000);
-            //Storing the data in the excel and run in it various dataset
-            driver.FindElement(By.ClassName("email")).SendKeys(ExcelDataReader.ReadData(1, "email"));
-            System.Threading.Thread.Sleep(4000);
-            driver.FindElement(By.ClassName("password")).SendKeys(ExcelDataReader.ReadData(1, "password"));
-            System.Threading.Thread.Sleep(4000);
-            driver.FindElement(By.ClassName("submit")).Click();
-            System.Threading.Thread.Sleep(4000);
-            driver.FindElement(By.ClassName("searchkey")).Click();
-            System.Threading.Thread.Sleep(4000);
-        }
-        public static void SearchKey(IWebDriver driver)
-        {
-            IWebElement MyElement = driver.FindElement(By.Name("q"));
-            MyElement.SendKeys(Keys.F10);MyElement.SendKeys(Keys.Down);
-            MyElement.SendKeys(Keys.Enter);
+           Pages.LoginPage login = new Pages.LoginPage(driver);
+            ExcelOperation.PopulateInCollection(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Resources\Flipkart_DDT.xlsx");
+            Debug.WriteLine("***");
+            login.email.SendKeys(ExcelOperation.ReadData(1, "email"));
+            System.Threading.Thread.Sleep(2000);
+            login.password.SendKeys(ExcelOperation.ReadData(1, "password"));
+            System.Threading.Thread.Sleep(2000);
+            login.submit.Click();
+            System.Threading.Thread.Sleep(2000);
+            login.searchkey.Click();
+            System.Threading.Thread.Sleep(2000);
+            login.searchkey.SendKeys(Keys.ArrowDown);
+            login.searchkey.SendKeys(Keys.Enter);
+            Base.BaseClass.Takescreenshot();
+            System.Threading.Thread.Sleep(2000);
+            try 
+            {
+                Console.WriteLine("Product Searched");
+            }
+            catch 
+            {
+                Console.WriteLine("Error");
+            }
         }
     }
 }

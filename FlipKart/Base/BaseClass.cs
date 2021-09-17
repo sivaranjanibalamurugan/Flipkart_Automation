@@ -21,42 +21,19 @@ namespace FlipKart.Base
     public class BaseClass
     {
         public static IWebDriver driver;
-     
-        //Get Logger for 'Tests'
-        private static readonly ILog log = LogManager.GetLogger(typeof(Tests));
-        //Get the default ILoggingRepository
-        private static readonly ILoggerRepository repository = log4net.LogManager.GetRepository(Assembly.GetCallingAssembly());
+
 
         [SetUp]
         public void SetUp()
         {
-            // Valid XML file with Log4Net Configurations
-            var fileInfo = new FileInfo(@"Log4net.config");
 
-            // Configure default logging repository with Log4Net configurations
-            log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
-            try
-            {
-                log.Info("Entering Setup");
-             
             //local selenium webdriver
             driver = new ChromeDriver();
-                driver.Manage().Window.Maximize();
-                System.Threading.Thread.Sleep(2000);
-                driver.Url = "https://www.flipkart.com/";
-                Takescreenshot();
-                log.Debug("navigating to url");
+            //To maximize the window
+            driver.Manage().Window.Maximize();
 
-                log.Info("Exiting setup");
-
-            }
-
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+            driver.Url = "https://www.flipkart.com/";
         }
-    
         [TearDown]
         public void TearDown()
         {
@@ -66,7 +43,8 @@ namespace FlipKart.Base
         {
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
             Screenshot screenshot = screenshotDriver.GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test1.png");
+            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png");
         }
+
     }
 }

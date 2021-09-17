@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FlipKart.Pages
 {
-    class LoginPage
+    public class LoginPage
     {
         public LoginPage(IWebDriver driver)
         {

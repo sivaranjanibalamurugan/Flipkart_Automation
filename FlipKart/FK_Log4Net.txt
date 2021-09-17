@@ -127,3 +127,72 @@
 2021-09-17 12:02:08,073 INFO Entering Setup
 2021-09-17 12:02:16,583 DEBUG navigating to url
 2021-09-17 12:02:16,584 INFO Exiting setup
+2021-09-17 12:38:55,393 INFO Entering Setup
+2021-09-17 12:39:05,477 DEBUG navigating to url
+2021-09-17 12:39:05,477 INFO Exiting setup
+2021-09-17 12:39:10,186 INFO Entering Setup
+2021-09-17 12:39:20,169 DEBUG navigating to url
+2021-09-17 12:39:20,169 INFO Exiting setup
+2021-09-17 12:39:24,733 INFO Entering Setup
+2021-09-17 12:39:33,310 DEBUG navigating to url
+2021-09-17 12:39:33,310 INFO Exiting setup
+2021-09-17 16:01:46,477 INFO Entering Setup
+2021-09-17 16:02:21,387 DEBUG navigating to url
+2021-09-17 16:02:21,387 INFO Exiting setup
+2021-09-17 16:02:26,796 INFO Entering Setup
+2021-09-17 16:03:10,616 DEBUG navigating to url
+2021-09-17 16:03:10,616 INFO Exiting setup
+2021-09-17 16:03:15,739 INFO Entering Setup
+2021-09-17 16:04:20,454 ERROR The HTTP request to the remote WebDriver server for URL http://localhost:65492/session/7ea048e6a0a52a77203166862a15f730/url timed out after 60 seconds.
+2021-09-17 16:05:33,526 INFO Entering Setup
+2021-09-17 16:05:54,621 DEBUG navigating to url
+2021-09-17 16:05:54,621 INFO Exiting setup
+2021-09-17 16:05:59,751 INFO Entering Setup
+2021-09-17 16:06:49,921 DEBUG navigating to url
+2021-09-17 16:06:49,921 INFO Exiting setup
+2021-09-17 16:06:54,960 INFO Entering Setup
+2021-09-17 16:07:41,139 DEBUG navigating to url
+2021-09-17 16:07:41,139 INFO Exiting setup
+2021-09-17 16:12:06,405 INFO Entering Setup
+2021-09-17 16:12:55,420 DEBUG navigating to url
+2021-09-17 16:12:55,420 INFO Exiting setup
+2021-09-17 16:13:00,501 INFO Entering Setup
+2021-09-17 16:13:13,941 DEBUG navigating to url
+2021-09-17 16:13:13,942 INFO Exiting setup
+2021-09-17 16:13:19,081 INFO Entering Setup
+2021-09-17 16:14:20,283 ERROR no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=93.0.4577.82)
+2021-09-17 16:14:38,623 INFO Entering Setup
+2021-09-17 16:15:10,148 ERROR no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=93.0.4577.82)
+2021-09-17 16:15:34,633 INFO Entering Setup
+2021-09-17 16:15:47,198 DEBUG navigating to url
+2021-09-17 16:15:47,198 INFO Exiting setup
+2021-09-17 16:15:48,426 INFO Entering Setup
+2021-09-17 16:16:08,124 DEBUG navigating to url
+2021-09-17 16:16:08,124 INFO Exiting setup
+2021-09-17 16:16:31,988 INFO Entering Setup
+2021-09-17 16:16:46,019 DEBUG navigating to url
+2021-09-17 16:16:46,020 INFO Exiting setup
+2021-09-17 16:16:52,475 INFO Entering Setup
+2021-09-17 16:17:01,821 DEBUG navigating to url
+2021-09-17 16:17:01,821 INFO Exiting setup
+2021-09-17 16:17:02,861 INFO Entering Setup
+2021-09-17 16:17:06,900 ERROR no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=93.0.4577.82)
+2021-09-17 16:17:59,768 INFO Entering Setup
+2021-09-17 16:18:24,588 DEBUG navigating to url
+2021-09-17 16:18:24,588 INFO Exiting setup
+2021-09-17 16:21:38,300 INFO Entering Setup
+2021-09-17 16:22:29,708 DEBUG navigating to url
+2021-09-17 16:22:29,709 INFO Exiting setup
+2021-09-17 16:23:55,021 INFO Entering Setup
+2021-09-17 16:24:57,706 ERROR The HTTP request to the remote WebDriver server for URL http://localhost:57312/session/a27e2ee7e87d116c1ba7c93180a6e522/url timed out after 60 seconds.
+2021-09-17 16:25:34,539 INFO Entering Setup
+2021-09-17 16:26:37,346 ERROR The HTTP request to the remote WebDriver server for URL http://localhost:53676/session/81b28b21595da672eb4954ab63ac09e8/url timed out after 60 seconds.
+2021-09-17 16:28:34,509 INFO Entering Setup
+2021-09-17 16:29:20,784 DEBUG navigating to url
+2021-09-17 16:29:20,785 INFO Exiting setup
