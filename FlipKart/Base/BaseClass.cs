@@ -38,10 +38,7 @@ namespace FlipKart.Base
             try
             {
                 log.Info("Entering Setup");
-                ChromeOptions options = new ChromeOptions();
-            options.AddArgument("Start-Maximized");
-            options.AddArgument("headless");
-
+             
             //local selenium webdriver
             driver = new ChromeDriver();
                 driver.Manage().Window.Maximize();
@@ -69,7 +66,7 @@ namespace FlipKart.Base
         {
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
             Screenshot screenshot = screenshotDriver.GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png");
+            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test1.png");
         }
     }
 }

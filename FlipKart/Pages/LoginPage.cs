@@ -31,5 +31,10 @@ namespace FlipKart.Pages
         [FindsBy(How = How.XPath, Using = "(//button[@class='_2KpZ6l _2HKlqd _3AWRsL'])")]
         [CacheLookup]
         public IWebElement submit;
+
+        [FindsBy(How = How.Name, Using = "q")]
+        [CacheLookup]
+        public IWebElement searchkey;
+
     }
 }
