@@ -196,3 +196,9 @@ from unknown error: web view not found
 2021-09-17 16:28:34,509 INFO Entering Setup
 2021-09-17 16:29:20,784 DEBUG navigating to url
 2021-09-17 16:29:20,785 INFO Exiting setup
+2021-09-17 21:43:29,717 INFO Entering Setup
+2021-09-17 21:43:37,820 DEBUG navigating to url
+2021-09-17 21:43:37,820 INFO Exiting setup
+2021-09-18 22:16:41,764 INFO Entering Setup
+2021-09-18 22:16:54,743 DEBUG navigating to url
+2021-09-18 22:16:54,744 INFO Exiting setup

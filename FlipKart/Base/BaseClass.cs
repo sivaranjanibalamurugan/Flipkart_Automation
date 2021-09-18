@@ -22,17 +22,38 @@ namespace FlipKart.Base
     {
         public static IWebDriver driver;
 
+        private static readonly ILog log = LogManager.GetLogger(typeof(Tests));
+        //Get the default ILoggingRepository
+        private static readonly ILoggerRepository repository = log4net.LogManager.GetRepository(Assembly.GetCallingAssembly());
 
         [SetUp]
         public void SetUp()
         {
+            // Valid XML file with Log4Net Configurations
+            var fileInfo = new FileInfo(@"Log4net.config");
 
-            //local selenium webdriver
-            driver = new ChromeDriver();
-            //To maximize the window
-            driver.Manage().Window.Maximize();
+            // Configure default logging repository with Log4Net configurations
+            log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
+            try
+            {
+                log.Info("Entering Setup");
 
-            driver.Url = "https://www.flipkart.com/";
+                //local selenium webdriver
+                driver = new ChromeDriver();
+               //To maximize the window
+               driver.Manage().Window.Maximize();
+
+               driver.Url = "https://www.flipkart.com/";
+                log.Debug("navigating to url");
+
+                log.Info("Exiting setup");
+
+            }
+
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
         [TearDown]
         public void TearDown()
