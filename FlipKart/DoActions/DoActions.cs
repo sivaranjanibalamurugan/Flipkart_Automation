@@ -27,26 +27,20 @@ namespace FlipKart.DoActions
            Pages.LoginPage login = new Pages.LoginPage(driver);
             ExcelOperation.PopulateInCollection(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Resources\Flipkart_DDT.xlsx");
             Debug.WriteLine("***");
+            //Entering mailid from resource
             login.email.SendKeys(ExcelOperation.ReadData(1, "email"));
             System.Threading.Thread.Sleep(2000);
+           
+
+            //entering the password from resource
             login.password.SendKeys(ExcelOperation.ReadData(1, "password"));
             System.Threading.Thread.Sleep(2000);
+            
+
+            //To click on submit 
             login.submit.Click();
             System.Threading.Thread.Sleep(2000);
-            login.searchkey.Click();
-            System.Threading.Thread.Sleep(2000);
-            login.searchkey.SendKeys(Keys.ArrowDown);
-            login.searchkey.SendKeys(Keys.Enter);
-            Base.BaseClass.Takescreenshot();
-            System.Threading.Thread.Sleep(2000);
-            try 
-            {
-                Console.WriteLine("Product Searched");
-            }
-            catch 
-            {
-                Console.WriteLine("Error");
-            }
+   
         }
     }
 }

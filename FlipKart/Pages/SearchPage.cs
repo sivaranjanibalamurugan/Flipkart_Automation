@@ -1,8 +1,5 @@
-﻿/* Project = Automating Flipkart using DDT and POM
- * Created by = SIVA RANJANI B
- * created on = 16/09/21
- */
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -12,24 +9,28 @@ using System.Threading.Tasks;
 
 namespace FlipKart.Pages
 {
-    public class LoginPage
+    public class Search_Page 
     {
-        public LoginPage(IWebDriver driver)
+        public Search_Page(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
 
-        //To locate the webelement 
         [FindsBy(How = How.XPath, Using = "(//input[@class='_2IX_2- VJZDxU'])")]
         [CacheLookup]
-        public IWebElement email;
+        public IWebElement mail;
 
         [FindsBy(How = How.XPath, Using = "(//input[@class='_2IX_2- _3mctLh VJZDxU'])")]
         [CacheLookup]
-        public IWebElement password;
+        public IWebElement pass;
 
         [FindsBy(How = How.XPath, Using = "(//button[@class='_2KpZ6l _2HKlqd _3AWRsL'])")]
         [CacheLookup]
-        public IWebElement submit;
+        public IWebElement login;
+
+        [FindsBy(How = How.Name, Using = "q")]
+        [CacheLookup]
+        public IWebElement searchkey;
+
     }
 }
