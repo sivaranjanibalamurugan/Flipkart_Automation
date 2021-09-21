@@ -1,4 +1,5 @@
 ﻿using FlipKart.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -17,18 +18,22 @@ namespace FlipKart.DoActions
 
             search.mail.SendKeys("8667361462");
             System.Threading.Thread.Sleep(3000);
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
+
             search.pass.SendKeys("sivabalaan10");
             System.Threading.Thread.Sleep(3000);
-            
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
+
             //To click on submit 
             search.login.Click();
             System.Threading.Thread.Sleep(2000);
-           
-          //  search.searchkey.SendKeys(ExcelOperation.ReadData(1, "search"));
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
+
+            //  search.searchkey.SendKeys(ExcelOperation.ReadData(1, "search"));
             //To click on the search bar
             search.searchkey.Click();
             System.Threading.Thread.Sleep(2000);
-          
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
 
             //To add the neede product to the search bar 
             search.searchkey.SendKeys(Keys.ArrowDown);
@@ -37,7 +42,9 @@ namespace FlipKart.DoActions
             System.Threading.Thread.Sleep(2000);
             search.product.Click();
             System.Threading.Thread.Sleep(2000);
+           // Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
             
         }
+       
     }
 }

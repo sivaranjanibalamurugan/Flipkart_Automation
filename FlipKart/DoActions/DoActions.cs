@@ -30,17 +30,19 @@ namespace FlipKart.DoActions
             //Entering mailid from resource
             login.email.SendKeys(ExcelOperation.ReadData(1, "email"));
             System.Threading.Thread.Sleep(2000);
-           
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
 
             //entering the password from resource
             login.password.SendKeys(ExcelOperation.ReadData(1, "password"));
             System.Threading.Thread.Sleep(2000);
-            
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
+
 
             //To click on submit 
             login.submit.Click();
             System.Threading.Thread.Sleep(2000);
-   
+            Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
+
         }
     }
 }

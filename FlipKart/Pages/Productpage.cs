@@ -17,6 +17,7 @@ namespace FlipKart.Pages
                 string brandname = productbrandname.Text;
                 Console.WriteLine(brandname);
             }
+            
         }
         public static void Products_price(IWebDriver driver)
         {
@@ -25,6 +26,16 @@ namespace FlipKart.Pages
             {
                 string brandprice = productbrandname.Text;
                 Console.WriteLine(brandprice);
+            }
+        }
+
+        public static void Products_rating(IWebDriver driver)
+        {
+            IList<IWebElement> productrating = driver.FindElements(By.XPath("(//div[@class ='_3LWZlK'])"));
+            foreach (IWebElement productbrandname in productrating)
+            {
+                string brandrating = productbrandname.Text;
+                Console.WriteLine(brandrating);
             }
         }
     }
