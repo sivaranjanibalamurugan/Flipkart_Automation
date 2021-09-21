@@ -35,6 +35,8 @@ namespace FlipKart.DoActions
             search.searchkey.SendKeys(Keys.Enter);
             Base.BaseClass.Takescreenshot();
             System.Threading.Thread.Sleep(2000);
+            search.product.Click();
+            System.Threading.Thread.Sleep(2000);
             
         }
     }

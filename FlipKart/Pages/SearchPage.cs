@@ -32,5 +32,8 @@ namespace FlipKart.Pages
         [CacheLookup]
         public IWebElement searchkey;
 
+         [FindsBy(How = How.XPath, Using = "(//div[@class='_4rR01T'])")]
+         [CacheLookup]
+         public IWebElement product;
     }
 }
