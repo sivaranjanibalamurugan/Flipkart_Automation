@@ -30,8 +30,6 @@ namespace FlipKart
 
                 string conifgPath = @"C:\Users\sivaranjani.b\source\repos\Facebook_datatestdriven\Facebook_datatestdriven\Report.xml";
                 htmlReporter.LoadConfig(conifgPath);
-
-
             }
             return extent;
         }

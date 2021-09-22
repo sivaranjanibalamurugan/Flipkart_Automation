@@ -43,7 +43,8 @@ namespace FlipKart.Base
                //To maximize the window
                driver.Manage().Window.Maximize();
 
-               driver.Url = "https://www.flipkart.com/";
+                driver.Url = "https://www.flipkart.com/";
+                 //driver.Url = "https://accounts.google.com/ServiceLogin/identifier?";
                 log.Debug("navigating to url");
 
                 log.Info("Exiting setup");

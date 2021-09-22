@@ -14,8 +14,8 @@ namespace FlipKart.Resources
     public class Tests : Base.BaseClass
     {
         ExtentReports reports = ReportClass.report();
-        ExtentTest test;/*
-        [Test]
+        ExtentTest test;
+        [Test,Order(0)]
         //Reading the data from the Excel file
         public void ReadingDataFromExcelFile()
         {
@@ -23,12 +23,13 @@ namespace FlipKart.Resources
             test.Log(Status.Info, "Automation Flipkart");
             DoActions.DoActions.LoginToFlipkart(driver);            
             System.Threading.Thread.Sleep(200);
-          
+            Takescreenshot();
+            test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png").Build());
             test.Log(Status.Pass, "Test Passes");
             reports.Flush();
-            Takescreenshot();
-        }*/
-        [Test, Order(0)]
+            
+        }
+        [Test, Order(1)]
         public void search_products()
         {
 
@@ -38,8 +39,11 @@ namespace FlipKart.Resources
             DoActions.DoActions_search.search_product(driver);
             System.Threading.Thread.Sleep(3000);
             Takescreenshot();
+            test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png").Build());
+            test.Log(Status.Pass, "Test Passes");
+            reports.Flush();
         }
-        [Test, Order(1)]
+        [Test, Order(2)]
         public void Product_list()
         {
             test = reports.CreateTest("Tests");
@@ -51,7 +55,7 @@ namespace FlipKart.Resources
             System.Threading.Thread.Sleep(3000);
             Takescreenshot();
         }
-        [Test, Order(2)]
+        [Test, Order(3)]
         public void Product_price()
         {
             test = reports.CreateTest("Tests");
@@ -64,7 +68,7 @@ namespace FlipKart.Resources
             Takescreenshot();
 
         }
-        [Test, Order(3)]
+        [Test, Order(4)]
         public void Product_rating()
         {
             test = reports.CreateTest("Tests");
@@ -75,6 +79,13 @@ namespace FlipKart.Resources
             reports.Flush();
             System.Threading.Thread.Sleep(200);
             Takescreenshot();
+        }
+        [Test,Order(1)]
+        public void sendmail()
+        {
+            driver.Url ="https://accounts.google.com/ServiceLogin/identifier?";
+            Pages.MailPage.ReadDataFromExcel(driver);
+            Pages.MailPage.email_send(driver);
         }
     }
 }
