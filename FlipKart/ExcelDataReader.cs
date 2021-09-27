@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FlipKart
 {
-    class ExcelOperation
+    public class ExcelOperation
     {
         public static DataTable ExcelDataTable(string Filename)
         {

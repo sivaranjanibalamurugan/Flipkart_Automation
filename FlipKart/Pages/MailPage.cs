@@ -35,7 +35,7 @@ namespace FlipKart.Pages
                 //Subject of the mail is added
                 mail.Subject = "Flipkart test mail";
                 //Body of the mail is added
-                mail.Body = "mail with Flipkart report attachmement";
+                mail.Body = "mail with Flipkart report using config attachmement";
                 Attachment attachment;
                 attachment = new Attachment(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Report\index.html");
                 Assert.NotNull(attachment);

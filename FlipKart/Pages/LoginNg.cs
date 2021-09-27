@@ -1,8 +1,4 @@
-﻿/* Project = Automating Flipkart using DDT and POM
- * Created by = SIVA RANJANI B
- * created on = 16/09/21
- */
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -12,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FlipKart.Pages
 {
-    public class LoginPage
+    public class LoginNgPage
     {
-        public LoginPage(IWebDriver driver)
+        public LoginNgPage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
@@ -32,9 +28,5 @@ namespace FlipKart.Pages
         [CacheLookup]
         public IWebElement submit;
 
-      /*  [FindsBy(How = How.XPath, Using = "(//span[contains(text()='Cart')])")]
-        [CacheLookup]
-        public IWebElement cart;*/
     }
 }
-      

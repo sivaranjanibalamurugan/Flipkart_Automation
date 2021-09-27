@@ -8,6 +8,9 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 namespace FlipKart.Resources
 {
@@ -15,77 +18,131 @@ namespace FlipKart.Resources
     {
         ExtentReports reports = ReportClass.report();
         ExtentTest test;
-        [Test,Order(0)]
-        //Reading the data from the Excel file
-        public void ReadingDataFromExcelFile()
-        {
-            test = reports.CreateTest("Tests");
-            test.Log(Status.Info, "Automation Flipkart");
-            DoActions.DoActions.LoginToFlipkart(driver);            
-            System.Threading.Thread.Sleep(200);
-            Takescreenshot();
-            test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png").Build());
-            test.Log(Status.Pass, "Test Passes");
-            reports.Flush();
-            
-        }
+           [Test,Order(0)]
+            //Reading the data from the Excel file
+            public void ReadingDataFromExcelFile()
+            {
+                test = reports.CreateTest("Tests");
+                test.Log(Status.Info, "Automation Flipkart");
+                DoActions.DoActions.LoginToFlipkart(driver);            
+                System.Threading.Thread.Sleep(200);
+                Takescreenshot();
+                test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png").Build());
+                test.Log(Status.Pass, "Test Passes");
+                reports.Flush();
+         }
         [Test, Order(1)]
-        public void search_products()
-        {
+         public void search_products()
+         {
 
-            test = reports.CreateTest("Tests");
-            test.Log(Status.Info, "Automation Flipkart");
-            //DoActions.DoActions.LoginToFlipkart(driver);
-            DoActions.DoActions_search.search_product(driver);
-            System.Threading.Thread.Sleep(3000);
-            Takescreenshot();
-            test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png").Build());
-            test.Log(Status.Pass, "Test Passes");
-            reports.Flush();
-        }
-        [Test, Order(2)]
-        public void Product_list()
-        {
-            test = reports.CreateTest("Tests");
-            test.Log(Status.Info, "Automation Flipkart");
-            DoActions.DoActions_search.search_product(driver);
-            Pages.Productpage.Products(driver);
-            test.Log(Status.Pass, "ProductBrand tescases Passed");
-            reports.Flush();
-            System.Threading.Thread.Sleep(3000);
-            Takescreenshot();
-        }
-        [Test, Order(3)]
-        public void Product_price()
-        {
-            test = reports.CreateTest("Tests");
-            test.Log(Status.Info, "Automation Flipkart");
-            DoActions.DoActions_search.search_product(driver);
-            Pages.Productpage.Products_price(driver);
-            test.Log(Status.Pass, "ProductPrice tescases passed");
-            reports.Flush();
-            System.Threading.Thread.Sleep(200);
-            Takescreenshot();
+             test = reports.CreateTest("Tests");
+             test.Log(Status.Info, "Automation Flipkart");
+             //DoActions.DoActions.LoginToFlipkart(driver);
+             DoActions.DoActions_search.search_product(driver);
+             System.Threading.Thread.Sleep(3000);
+             Takescreenshot();
+             test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png").Build());
+             test.Log(Status.Pass, "Test Passes");
+             reports.Flush();
+         }
+         [Test, Order(2)]
+         public void Product_list()
+         {
+             test = reports.CreateTest("Tests");
+             test.Log(Status.Info, "Automation Flipkart");
+             DoActions.DoActions_search.search_product(driver);
+             Pages.Productpage.Products(driver);
+             test.Log(Status.Pass, "ProductBrand tescases Passed");
+             reports.Flush();
+             System.Threading.Thread.Sleep(3000);
+             Takescreenshot();
+         }
+         [Test, Order(3)]
+         public void Product_price()
+         {
+             test = reports.CreateTest("Tests");
+             test.Log(Status.Info, "Automation Flipkart");
+             DoActions.DoActions_search.search_product(driver);
+             Pages.Productpage.Products_price(driver);
+             test.Log(Status.Pass, "ProductPrice tescases passed");
+             reports.Flush();
+             System.Threading.Thread.Sleep(200);
+             Takescreenshot();
 
-        }
-        [Test, Order(4)]
-        public void Product_rating()
+         }
+         [Test, Order(4)]
+         public void Product_rating()
+         {
+             test = reports.CreateTest("Tests");
+             test.Log(Status.Info, "Automation Flipkart");
+             DoActions.DoActions_search.search_product(driver);
+             Pages.Productpage.Products_rating(driver);
+             test.Log(Status.Pass, "ProductPrice tescases passed");
+             reports.Flush();
+             System.Threading.Thread.Sleep(200);
+             Takescreenshot();
+         }
+              [Test, Order(5)]
+              public void sendmail()
+              {
+                  //driver.Url ="https://accounts.google.com/ServiceLogin/identifier?";
+                  Pages.MailPage.ReadDataFromExcel(driver);
+                  Pages.MailPage.email_send(driver);
+              }
+
+              [Test, Order(6)]
+              public void Sendingmail()
+              {
+                  try
+                  {
+                      // driver.Url = "https://accounts.google.com/ServiceLogin/identifier?";
+                      MailMessage mail = new MailMessage();
+                      string fromEmail = ConfigurationManager.AppSettings["Email"];
+                      string password = ConfigurationManager.AppSettings["password"];
+                      String ToEmail = ConfigurationManager.AppSettings["ToReportEmail"];
+                      mail.From = new MailAddress(fromEmail);
+                      mail.Subject = "Automating the Report";
+                      mail.To.Add(ToEmail);
+                      mail.Priority = MailPriority.High;
+                      mail.IsBodyHtml = true;
+                      mail.Attachments.Add(new Attachment(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Report\index.html"));
+                      SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                      smtp.Port = 587;
+                      smtp.UseDefaultCredentials = false;
+                      object fromMail = null;
+                      smtp.Credentials = new NetworkCredential((string)fromMail, (string)password);
+                      smtp.EnableSsl = true;
+                      smtp.Send(mail);
+                  }
+                  catch
+                  {
+
+                  }
+              }
+              [Test,Order(7)]
+              public void Addtofav()
+              {
+                  DoActions.DoActionRP.Result_Page(driver);
+                  Takescreenshot();
+              }
+
+            [Test,Order(8)]
+            public void Cart()
+            {
+                DoActions.DoActions.LoginToFlipkart(driver);
+            }
+        [Test]
+        public void Test_InvalidLogin()
         {
-            test = reports.CreateTest("Tests");
-            test.Log(Status.Info, "Automation Flipkart");
-            DoActions.DoActions_search.search_product(driver);
-            Pages.Productpage.Products_rating(driver);
-            test.Log(Status.Pass, "ProductPrice tescases passed");
-            reports.Flush();
-            System.Threading.Thread.Sleep(200);
-            Takescreenshot();
-        }
-        [Test,Order(1)]
-        public void sendmail()
-        {
-            driver.Url ="https://accounts.google.com/ServiceLogin/identifier?";
-            Pages.MailPage.ReadDataFromExcel(driver);
-            Pages.MailPage.email_send(driver);
+           DoActions.DoActionNg.LoginToFlipkart(driver);
+            string expected = "+91";
+            string actual = driver.FindElement(By.XPath("//body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/span[2]")).Text;
+            //string actual = driver.FindElement(By.ClassName("_2YULOR")).Text;
+            Console.WriteLine("Error Meassage: {0}", actual);
+            Assert.AreEqual(expected, actual);
+
         }
     }
 }
+
+    
