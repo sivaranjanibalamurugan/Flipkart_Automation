@@ -50,18 +50,14 @@ namespace FlipKart.DoActions
                System.Threading.Thread.Sleep(2000);
                // Assert.AreEqual(driver.Url, "https://www.flipkart.com/search?q=mobiles&as=on&as-show=on&otracker=AS_Query_TrendingAutoSuggest_1_0_na_na_na&otracker1=AS_Query_TrendingAutoSuggest_1_0_na_na_na&as-pos=1&as-type=TRENDING&suggestionId=mobiles&requestId=1852842a-f8db-4d4e-b781-0ea872f35c21&as-backfill=on");
 
-               /* result.fav.Click();
-                System.Threading.Thread.Sleep(4000);*/
-
+             
             result.product.Click();
             driver.SwitchTo().Window(driver.WindowHandles[1]);
             System.Threading.Thread.Sleep(4000);
 
             result.addtobag.Click();
             System.Threading.Thread.Sleep(4000);
-          
-           /* result.buynow.Click();
-              System.Threading.Thread.Sleep(2000);*/
+                
         
             try
             {
