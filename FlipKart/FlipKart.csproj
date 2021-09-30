@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.16.0" />
     <PackageReference Include="AutoItX.Dotnet" Version="3.3.14.5" />
     <PackageReference Include="CSF.Configuration" Version="1.2.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
@@ -36,6 +37,9 @@
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="93.0.4577.6300" />
+    <PackageReference Include="Sikuli4Net" Version="1.0.6" />
+    <PackageReference Include="SikuliIntegrator" Version="1.1.0" />
+    <PackageReference Include="SikuliSharp" Version="1.5.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
   </ItemGroup>

@@ -18,7 +18,7 @@ namespace FlipKart.Resources
     {
         ExtentReports reports = ReportClass.report();
         ExtentTest test;
-           [Test,Order(0)]
+     /*     [Test,Order(0)]
             //Reading the data from the Excel file
             public void ReadingDataFromExcelFile()
             {
@@ -26,7 +26,9 @@ namespace FlipKart.Resources
                 test.Log(Status.Info, "Automation Flipkart");
                 DoActions.DoActions.LoginToFlipkart(driver);            
                 System.Threading.Thread.Sleep(200);
+            //calling the screenshot method
                 Takescreenshot();
+             //adding screenshot to the report
                 test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test.png").Build());
                 test.Log(Status.Pass, "Test Passes");
                 reports.Flush();
@@ -40,8 +42,10 @@ namespace FlipKart.Resources
              //DoActions.DoActions.LoginToFlipkart(driver);
              DoActions.DoActions_search.search_product(driver);
              System.Threading.Thread.Sleep(3000);
-             Takescreenshot();
-             test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png").Build());
+            //calling the screenshot method
+               Takescreenshot();
+            //adding screenshot to the report
+            test.Info("ScreenShot", MediaEntityBuilder.CreateScreenCaptureFromPath(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png").Build());
              test.Log(Status.Pass, "Test Passes");
              reports.Flush();
          }
@@ -52,10 +56,12 @@ namespace FlipKart.Resources
              test.Log(Status.Info, "Automation Flipkart");
              DoActions.DoActions_search.search_product(driver);
              Pages.Productpage.Products(driver);
-             test.Log(Status.Pass, "ProductBrand tescases Passed");
+            System.Threading.Thread.Sleep(3000);
+            //calling the screenshot method
+            Takescreenshot();
+            test.Log(Status.Pass, "ProductBrand tescases Passed");
              reports.Flush();
-             System.Threading.Thread.Sleep(3000);
-             Takescreenshot();
+             
          }
          [Test, Order(3)]
          public void Product_price()
@@ -64,10 +70,12 @@ namespace FlipKart.Resources
              test.Log(Status.Info, "Automation Flipkart");
              DoActions.DoActions_search.search_product(driver);
              Pages.Productpage.Products_price(driver);
-             test.Log(Status.Pass, "ProductPrice tescases passed");
+            System.Threading.Thread.Sleep(200);
+            //calling the screenshot method
+            Takescreenshot();
+            test.Log(Status.Pass, "ProductPrice tescases passed");
              reports.Flush();
-             System.Threading.Thread.Sleep(200);
-             Takescreenshot();
+            
 
          }
          [Test, Order(4)]
@@ -77,10 +85,12 @@ namespace FlipKart.Resources
              test.Log(Status.Info, "Automation Flipkart");
              DoActions.DoActions_search.search_product(driver);
              Pages.Productpage.Products_rating(driver);
-             test.Log(Status.Pass, "ProductPrice tescases passed");
+            System.Threading.Thread.Sleep(200);
+            //Calling the screenshot method
+            Takescreenshot();
+            test.Log(Status.Pass, "ProductPrice tescases passed");
              reports.Flush();
-             System.Threading.Thread.Sleep(200);
-             Takescreenshot();
+             
          }
               [Test, Order(5)]
               public void sendmail()
@@ -88,6 +98,8 @@ namespace FlipKart.Resources
                   //driver.Url ="https://accounts.google.com/ServiceLogin/identifier?";
                   Pages.MailPage.ReadDataFromExcel(driver);
                   Pages.MailPage.email_send(driver);
+                  //Calling the screenshot method
+                   Takescreenshot();
               }
 
               [Test, Order(6)]
@@ -116,32 +128,38 @@ namespace FlipKart.Resources
                   }
                   catch
                   {
-
+                        Console.WriteLine("Failed");
                   }
-              }
-              [Test,Order(7)]
+              }*/
+        /*      [Test,Order(7)]
               public void Addtofav()
               {
                   DoActions.DoActionRP.Result_Page(driver);
+                 //call screenshot method
                   Takescreenshot();
-              }
-
+              }*/
+        
             [Test,Order(8)]
             public void Cart()
             {
-                DoActions.DoActions.LoginToFlipkart(driver);
-            }
-        [Test]
-        public void Test_InvalidLogin()
-        {
-           DoActions.DoActionNg.LoginToFlipkart(driver);
-            string expected = "+91";
-            string actual = driver.FindElement(By.XPath("//body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/span[2]")).Text;
-            //string actual = driver.FindElement(By.ClassName("_2YULOR")).Text;
-            Console.WriteLine("Error Meassage: {0}", actual);
-            Assert.AreEqual(expected, actual);
-
-        }
+             DoActions.DoActionRP.Result_Page(driver);
+            System.Threading.Thread.Sleep(2000);
+                //call screenshot method
+                 Takescreenshot();
+             }
+        /*   [Test,Order(9)]
+            //Negative testcase
+            public void Test_InvalidLogin()
+            {
+                DoActions.DoActionNg.LoginToFlipkart(driver);
+                 string expected = "+91";
+                string actual = driver.FindElement(By.XPath("//body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/span[2]")).Text;
+               //string actual = driver.FindElement(By.ClassName("_2YULOR")).Text;
+                Console.WriteLine("Error Meassage: {0}", actual);
+                 Assert.AreEqual(expected, actual);
+                 //call screenshot method
+                 Takescreenshot();
+        }*/
     }
 }
 

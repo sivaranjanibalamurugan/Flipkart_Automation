@@ -44,7 +44,7 @@ namespace FlipKart.Base
                driver.Manage().Window.Maximize();
 
                 driver.Url = "https://www.flipkart.com/";
-                 //driver.Url = "https://accounts.google.com/ServiceLogin/identifier?";
+                //driver.Url = "https://accounts.google.com/ServiceLogin/identifier?";
                 log.Debug("navigating to url");
 
                 log.Info("Exiting setup");
@@ -65,7 +65,7 @@ namespace FlipKart.Base
         {
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
             Screenshot screenshot = screenshotDriver.GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test2.png");
+            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\test3.png");
         }
 
     }

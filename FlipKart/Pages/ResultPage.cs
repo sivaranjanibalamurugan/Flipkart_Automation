@@ -1,4 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿/*
+*Project = Automating Flipkart using DDT and POM
+* Created by = SIVA RANJANI B
+ * created on = 16/09/21
+ */
+
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -8,8 +14,9 @@ using System.Threading.Tasks;
 
 namespace FlipKart.Pages
 {
-    public class ResultPage
+    public class ResultPage:Base.BaseClass
     {
+
         public  ResultPage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
@@ -27,25 +34,24 @@ namespace FlipKart.Pages
         [CacheLookup]
         public IWebElement login;
 
-        [FindsBy(How = How.Name, Using = "q")]
+       [FindsBy(How = How.Name, Using = "q")]
+       [CacheLookup]
+       public IWebElement searchkey;
+        
+       [FindsBy(How = How.XPath, Using = "(//div[@class='_4rR01T'])")]
+       [CacheLookup]
+       public IWebElement product;
+
+      /*[FindsBy(How = How.XPath, Using = "(//div[@class='_36FSn5'])")]
         [CacheLookup]
-        public IWebElement searchkey;
+        public IWebElement fav;*/
 
-        [FindsBy(How = How.XPath, Using = "(//div[@class='_4rR01T'])")]
+       [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button")]
+       [CacheLookup]
+       public IWebElement addtobag;
+
+    /*  [FindsBy(How = How.XPath, Using = "//body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/form[1]/button[1]")]
         [CacheLookup]
-        public IWebElement product;
-
-         [FindsBy(How = How.XPath, Using = "(//div[@class='_36FSn5'])")]
-         [CacheLookup]
-         public IWebElement fav;
-
-        /*    [FindsBy(How = How.XPath, Using = "((//input[contains(@value,'Add to Cart')])[1]])")]
-             [CacheLookup]
-             public IWebElement addtocart;
-
-              [FindsBy(How = How.XPath, Using = "(//button[@class ='_2KpZ6l _2U9uOA ihZ75k _3AWRsL'])")]
-             [CacheLookup]
-             public IWebElement addtocart;*/
-    
+        public IWebElement buynow;*/
     }
 }

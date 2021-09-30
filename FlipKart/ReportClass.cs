@@ -26,7 +26,7 @@ namespace FlipKart
                 extent.AddSystemInfo("UserName", "SivaRanjani");
                 extent.AddSystemInfo("ProviderName", "SivaRanjani");
                 extent.AddSystemInfo("Domain", "QA");
-                extent.AddSystemInfo("ProjectName", "FaceBook Automation");
+                extent.AddSystemInfo("ProjectName", "Flipkart Automation");
 
                 string conifgPath = @"C:\Users\sivaranjani.b\source\repos\Facebook_datatestdriven\Facebook_datatestdriven\Report.xml";
                 htmlReporter.LoadConfig(conifgPath);

@@ -1,4 +1,9 @@
-﻿using NUnit.Framework;
+﻿/*
+*Project = Automating Flipkart using DDT and POM
+* Created by = SIVA RANJANI B
+ * created on = 16/09/21
+ */
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -13,7 +18,9 @@ namespace FlipKart.DoActions
     {
         public static void LoginToFlipkart(IWebDriver driver)
         {
-            Pages.LoginNgPage login = new Pages.LoginNgPage(driver);
+            try
+            {
+                Pages.LoginNgPage login = new Pages.LoginNgPage(driver);
             ExcelOperation.PopulateInCollection(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Resources\FK_Negative.xlsx");
             Debug.WriteLine("***");
             //Entering mailid from resource
@@ -29,8 +36,7 @@ namespace FlipKart.DoActions
             login.submit.Click();
             System.Threading.Thread.Sleep(2000);
             Assert.AreEqual(driver.Url, "https://www.flipkart.com/");
-            try
-            {
+            
                 Console.WriteLine("Successful");
             }
             catch
