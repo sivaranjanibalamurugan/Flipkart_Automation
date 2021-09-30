@@ -55,6 +55,10 @@ namespace FlipKart.DoActions
             driver.SwitchTo().Window(driver.WindowHandles[1]);
             System.Threading.Thread.Sleep(4000);
 
+            result.fav.Click();
+            System.Threading.Thread.Sleep(4000);
+
+
             result.addtobag.Click();
             System.Threading.Thread.Sleep(4000);
                 

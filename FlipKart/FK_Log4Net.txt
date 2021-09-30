@@ -1530,3 +1530,6 @@ from unknown error: web view not found
 2021-09-30 12:46:14,975 INFO Entering Setup
 2021-09-30 12:46:22,619 DEBUG navigating to url
 2021-09-30 12:46:22,619 INFO Exiting setup
+2021-09-30 16:45:56,110 INFO Entering Setup
+2021-09-30 16:46:09,675 DEBUG navigating to url
+2021-09-30 16:46:09,675 INFO Exiting setup

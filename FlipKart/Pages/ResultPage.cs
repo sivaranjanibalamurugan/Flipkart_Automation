@@ -42,7 +42,11 @@ namespace FlipKart.Pages
        [CacheLookup]
        public IWebElement product;
 
-       [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button")]
+        [FindsBy(How = How.XPath, Using = "(//div[@class='_36FSn5'])")]
+        [CacheLookup]
+        public IWebElement fav;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button")]
        [CacheLookup]
        public IWebElement addtobag;
    
