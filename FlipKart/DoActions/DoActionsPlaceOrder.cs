@@ -12,8 +12,9 @@ namespace FlipKart.DoActions
         public static void PlaceOrder(IWebDriver driver)
         {
             DoActionRP.Result_Page(driver);
-            Pages.Placeorderpage place = new Pages.Placeorderpage(driver);
+            Pages.Placeorderpage place = new Pages.Placeorderpage(driver);           
             place.buynow.Click();
+            System.Threading.Thread.Sleep(4000);
         }
     }
 }

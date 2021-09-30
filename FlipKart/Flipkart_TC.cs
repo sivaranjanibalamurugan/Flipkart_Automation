@@ -137,7 +137,7 @@ namespace FlipKart.Resources
                   DoActions.DoActionRP.Result_Page(driver);
                  //call screenshot method
                   Takescreenshot();
-              }*/
+              }
         
             [Test,Order(8)]
             public void Cart()
@@ -146,7 +146,7 @@ namespace FlipKart.Resources
             System.Threading.Thread.Sleep(2000);
                 //call screenshot method
                  Takescreenshot();
-             }
+      }*/
         /*  [Test,Order(9)]
             public void buynow()
             {
@@ -154,8 +154,15 @@ namespace FlipKart.Resources
             System.Threading.Thread.Sleep(4000);
             Takescreenshot();
 
-            }
-         [Test,Order(9)]
+            }*/
+        [Test]
+        public void AddressDetails()
+        {
+            DoActions.AddressPage.Address_Page(driver);
+            System.Threading.Thread.Sleep(4000);
+            Takescreenshot();
+        }
+         /*[Test,Order(11)]
             //Negative testcase
             public void Test_InvalidLogin()
             {
