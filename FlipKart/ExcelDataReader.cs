@@ -68,7 +68,7 @@ namespace FlipKart
         {
             try
             {
-                string data = (from colData in dataCol where colData.colName == columnName && colData.rowNumber == rowNumber select colData.colValue).SingleOrDefault();
+                string data = (from colData in dataCol where colData.colName == columnName && colData.rowNumber == rowNumber select colData.colValue).First();
                 return data.ToString();
             }
             catch (Exception e)

@@ -22,6 +22,7 @@ namespace FlipKart.Pages
             PageFactory.InitElements(driver, this);
         }
 
+ 
         [FindsBy(How = How.XPath, Using = "(//input[@class='_2IX_2- VJZDxU'])")]
         [CacheLookup]
         public IWebElement mail;
@@ -46,7 +47,7 @@ namespace FlipKart.Pages
         [CacheLookup]
         public IWebElement fav;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button")]
+       [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button")]
        [CacheLookup]
        public IWebElement addtobag;
    
