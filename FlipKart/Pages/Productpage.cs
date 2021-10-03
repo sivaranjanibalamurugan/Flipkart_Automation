@@ -14,8 +14,9 @@ namespace FlipKart.Pages
 {
     public class Productpage:Base.BaseClass
     {
-        public static void Products(IWebDriver driver)
+        public  void Products()
         {
+            Console.WriteLine("****************Products************************");
             IList<IWebElement> productbrand = driver.FindElements(By.XPath("(//div[@class ='_4rR01T'])"));
             foreach (IWebElement productbrandname in productbrand)
             {
@@ -24,8 +25,9 @@ namespace FlipKart.Pages
             }
             
         }
-        public static void Products_price(IWebDriver driver)
+        public  void Products_price()
         {
+            Console.WriteLine("****************Products_Price************************");
             IList<IWebElement> productprice = driver.FindElements(By.XPath("(//div[@class ='_30jeq3 _1_WHN1'])"));
             foreach (IWebElement productbrandname in productprice)
             {
@@ -34,8 +36,9 @@ namespace FlipKart.Pages
             }
         }
 
-        public static void Products_rating(IWebDriver driver)
+        public  void Products_rating()
         {
+            Console.WriteLine("****************Products_rating************************");
             IList<IWebElement> productrating = driver.FindElements(By.XPath("(//div[@class ='_3LWZlK'])"));
             foreach (IWebElement productbrandname in productrating)
             {

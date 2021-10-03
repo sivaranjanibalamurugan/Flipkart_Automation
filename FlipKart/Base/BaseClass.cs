@@ -8,6 +8,7 @@ using log4net.Repository;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,17 @@ namespace FlipKart.Base
         //Get the default ILoggingRepository
         private static readonly ILoggerRepository repository = log4net.LogManager.GetRepository(Assembly.GetCallingAssembly());
 
+        protected string browser;
+        //default constructor
+        public BaseClass()
+        {
+
+        }
+        //parameterized constructor
+        public BaseClass(string browser)
+        {
+            this.browser = browser;
+        }
         [SetUp]
         public void SetUp()
         {
@@ -36,10 +48,32 @@ namespace FlipKart.Base
             log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
             try
             {
+                switch (browser)
+                {
+
+                    case "chrome":
+                        //Creating an instance of chrome webdriver
+                        ChromeOptions options = new ChromeOptions();
+                        options.AddArguments("--disable-notifications");
+                        
+                        driver = new ChromeDriver(options);
+                        break;
+                    case "firefox":
+                        //Creating an instance of firefox webdriver
+                        driver = new FirefoxDriver();
+                        break;
+                    default:
+                        driver = new ChromeDriver();
+                        break;
+                }
+
+                //print which browser is started
+                Console.WriteLine(browser + " Started");
+                log.Debug("navigating to url");
                 log.Info("Entering Setup");
 
                 //local selenium webdriver
-                driver = new ChromeDriver();
+              //  driver = new ChromeDriver();
                //To maximize the window
                driver.Manage().Window.Maximize();
 
@@ -65,7 +99,7 @@ namespace FlipKart.Base
         {
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
             Screenshot screenshot = screenshotDriver.GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\tests.png");
+            screenshot.SaveAsFile(@"C:\Users\sivaranjani.b\source\repos\FlipKart\FlipKart\Screenshot\f_k.png");
         }
 
     }

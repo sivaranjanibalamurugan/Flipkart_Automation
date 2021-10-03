@@ -14,6 +14,9 @@ namespace FlipKart.Pages
         {
             PageFactory.InitElements(driver, this);
         }
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[2]/div/div[1]/div[2]/div/div/div/div[2]/div[2]")]
+        [CacheLookup]
+        public IWebElement newaddress;
 
         [FindsBy(How = How.Name, Using = "name")]
         [CacheLookup]
